@@ -8,7 +8,7 @@ class fluentd::repo::apt (
   $architecture = $::architecture,
   $key          = {
     'id'     => 'C901622B5EC4AF820C38AB861093DB45A12E206F',
-    'source' => 'http://packages.treasuredata.com/GPG-KEY-google-fluentd'
+    'source' => 'http://packages.treasuredata.com/GPG-KEY-td-agent'
   },
   $include      = {
     'src' => false,
