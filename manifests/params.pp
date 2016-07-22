@@ -4,7 +4,7 @@ class fluentd::params {
   $package_name            = 'google-fluentd'
   $package_install_options = []
   # Install the google catch-all package
-  $install_catch_all       = true
+  $google_catch_all        = installed
   # service params
   $service_manage = true
   $service_name   = 'google-fluentd'
