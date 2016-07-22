@@ -8,9 +8,7 @@ class fluentd::install inherits fluentd {
     install_options => $::fluentd::package_install_options,
   }
 
-  if $::fluentd::install_catch_all {
-    package { 'google-fluentd-catch-all-config':
-      ensure => installed,
-    }
+  package { 'google-fluentd-catch-all-config':
+      ensure => $::fluentd::google_catch_all,
   }
 }
