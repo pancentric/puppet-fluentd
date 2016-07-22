@@ -6,14 +6,14 @@
 # Parameters
 # ----------
 # [*repo_manage*]
-#   Include repository to install recent fluentd (td-agent) from
+#   Include repository to install recent fluentd (google-fluentd) from
 #   Default: 'true'
 # [*package_ensure*]
 #   Package ensure
 #   Default: 'installed'
 # [*package_name*]
 #   Package name
-#   Default: 'td-agent'
+#   Default: 'google-fluentd'
 # [*package_install_options*]
 #   Package install options
 #   Default: '[]'
@@ -22,7 +22,7 @@
 #   Default: 'true'
 # [*service_name*]
 #   Name of the service
-#   Default: 'td-agent'
+#   Default: 'google-fluentd'
 # [*service_ensure*]
 #   Service ensure
 #   Default: 'running'
@@ -35,9 +35,9 @@
 #   For example to be able to view the /var/log directory with group adm
 #   Default: 'true'
 # [*user_name*]
-#   Default: 'td-agent'
+#   Default: 'google-fluentd'
 # [*user_group*]
-#   Default: 'td-agent'
+#   Default: 'google-fluentd'
 # [*user_groups*]
 #   Default: '["adm"]'
 #

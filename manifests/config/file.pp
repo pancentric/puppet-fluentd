@@ -28,8 +28,8 @@ define fluentd::config::file (
   file { $config_path:
     ensure  => $ensure,
     content => $content,
-    owner   => 'td-agent',
-    group   => 'td-agent',
+    owner   => 'google-fluentd',
+    group   => 'google-fluentd',
     mode    => '0644',
     notify  => Class['Fluentd::Service'],
   }
