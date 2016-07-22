@@ -12,7 +12,7 @@ class fluentd::params {
   $service_enable = true
   # config params
   $config_path = '/etc/google-fluentd'
-  $conf_dir    = "${config_path}/conf.d"
+  $conf_dir    = "${config_path}/config.d"
   $config_file = "${config_path}/google-fluentd.conf"
   # user params
   $user_manage = false
