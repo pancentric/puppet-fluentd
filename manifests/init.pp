@@ -69,6 +69,10 @@ class fluentd (
   $user_name               = $::fluentd::params::user_name,
   $user_group              = $::fluentd::params::user_group,
   $user_groups             = $::fluentd::params::user_groups,
+
+  $sources                 = {},
+  $filters                 = {},
+  $matches                 = {},
 ) inherits fluentd::params {
 
   # parameter validation
@@ -80,9 +84,18 @@ class fluentd (
   validate_string($service_name)
   validate_bool($service_enable)
 
+  # validate hiera
+  validate_hash($sources)
+  validate_hash($filters)
+  validate_hash($matches)
+
   if ! ($service_ensure in [ 'running', 'stopped' ]) {
     fail('service_ensure parameter must be running or stopped')
   }
+
+  create_resources('::fluentd::source',$sources)
+  create_resources('::fluentd::filter',$filters)
+  create_resources('::fluentd::match',$matches)
 
   # class calls
   include '::fluentd::repo'
