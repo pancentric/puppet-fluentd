@@ -56,6 +56,7 @@ class fluentd (
   $repo_manage             = $::fluentd::params::repo_manage,
   $package_ensure          = $::fluentd::params::package_ensure,
   $package_name            = $::fluentd::params::package_name,
+  $install_catch_all       = $::fluentd::params::install_catch_all,
   $package_install_options = $::fluentd::params::package_install_options,
   $service_manage          = $::fluentd::params::service_manage,
   $service_name            = $::fluentd::params::service_name,
