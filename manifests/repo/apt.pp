@@ -17,7 +17,7 @@ class fluentd::repo::apt (
 
   include '::apt'
 
-  apt::source { 'google-cloud-logging':
+  apt::source { 'google-cloud-packages':
     ensure   => $ensure,
     location => $location,
     release  => $release,
