@@ -96,9 +96,9 @@ class fluentd (
   }
 
   if ( $deep_merge ) {
-    $sources = hiera_hash('fluent::sources')
-    $filters = hiera_hash('fluent::filters')
-    $matches = hiera_hash('fluent::matches')
+    $sources = hiera_hash('fluentd::sources')
+    $filters = hiera_hash('fluentd::filters')
+    $matches = hiera_hash('fluentd::matches')
   }
 
   create_resources('::fluentd::source',$sources)
