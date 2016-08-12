@@ -70,6 +70,8 @@ class fluentd (
   $user_group              = $::fluentd::params::user_group,
   $user_groups             = $::fluentd::params::user_groups,
 
+  $deep_merge              = true,
+
   $sources                 = {},
   $filters                 = {},
   $matches                 = {},
@@ -91,6 +93,12 @@ class fluentd (
 
   if ! ($service_ensure in [ 'running', 'stopped' ]) {
     fail('service_ensure parameter must be running or stopped')
+  }
+
+  if ( $deep_merge ) {
+    $sources = hiera_hash('fluent::sources')
+    $filters = hiera_hash('fluent::filters')
+    $matches = hiera_hash('fluent::matches')
   }
 
   create_resources('::fluentd::source',$sources)
