@@ -96,18 +96,18 @@ class fluentd (
   }
 
   if ( $deep_merge ) {
-    $x_sources = hiera_hash('fluentd::sources')
-    $x_filters = hiera_hash('fluentd::filters')
-    $x_matches = hiera_hash('fluentd::matches')
+    $x_sources = hiera_hash('fluentd::sources',undef)
+    $x_filters = hiera_hash('fluentd::filters',undef)
+    $x_matches = hiera_hash('fluentd::matches',undef)
   } else {
     $x_sources = $sources
     $x_filters = $filters
     $x_matches = $matches
   }
 
-  create_resources('::fluentd::source',$x_sources)
-  create_resources('::fluentd::filter',$x_filters)
-  create_resources('::fluentd::match',$x_matches)
+  if ($x_sources) { create_resources('::fluentd::source',$x_sources) }
+  if ($x_filters) { create_resources('::fluentd::filter',$x_filters) }
+  if ($x_matches) { create_resources('::fluentd::match',$x_matches) }
 
   # class calls
   include '::fluentd::repo'
